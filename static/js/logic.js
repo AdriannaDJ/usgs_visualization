@@ -43,11 +43,11 @@ d3.json(queryURL).then(function(data) {
             fillColor: color,
             radius: feature.properties.mag * 10000,
             weight: 1
-        }).bindPopup(`<h2> Location: ${feature.properties.place} </h2>\
-        <hr><h2> Magnitude: ${feature.properties.mag} </h2>\
-        <hr><h2> Magnitude Type: ${feature.properties.magType} </h2>\
-        <hr><h2> Magnitude Depth: ${feature.geometry.coordinates[2]} </h2>\
-        <hr><h2> Date: ${Date(feature.properties.time * 1000)} </h2>`).addTo(myMap);
+        }).bindPopup(`<h3> Location: ${feature.properties.place} </h3>\
+        <hr><h3> Magnitude: ${feature.properties.mag} </h3>\
+        <hr><h3> Magnitude Type: ${feature.properties.magType} </h3>\
+        <hr><h3> Magnitude Depth: ${feature.geometry.coordinates[2]} </h3>\
+        <hr><h3> Date: ${Date(feature.properties.time * 1000)} </h3>`).addTo(myMap);
     })
 });
 
@@ -60,7 +60,7 @@ var legend = L.control({ position: "bottomright" });
 legend.onAdd = function(map) {
   var div = L.DomUtil.create("div", "legend");
   div.innerHTML += "<h4>Earthquake Depth:</h4>";
-  div.innerHTML += '<i style="background: lightgreen"></i><span>10-10</span><br>';
+  div.innerHTML += '<i style="background: lightgreen"></i><span>-10-10</span><br>';
   div.innerHTML += '<i style="background: yellowgreen"></i><span>10-30</span><br>';
   div.innerHTML += '<i style="background: yellow"></i><span>30-50</span><br>';
   div.innerHTML += '<i style="background: orange"></i><span>50-70</span><br>';
@@ -75,7 +75,7 @@ legend.addTo(myMap);
 
 
 // Part 2 - Gather and Plot More Data
-// Import data 
+// Import data
 
 // Plot the tectonic plates dataset on the map in addition to the earthquakes.
 
