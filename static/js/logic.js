@@ -46,7 +46,7 @@ d3.json(queryURL).then(function(data) {
         }).bindPopup(`<h3> Location: ${feature.properties.place} </h3>\
         <hr><h3> Magnitude: ${feature.properties.mag} </h3>\
         <hr><h3> Magnitude Type: ${feature.properties.magType} </h3>\
-        <hr><h3> Magnitude Depth: ${feature.geometry.coordinates[2]} </h3>\
+        <hr><h3> Depth: ${feature.geometry.coordinates[2]} </h3>\
         <hr><h3> Date: ${Date(feature.properties.time * 1000)} </h3>`).addTo(myMap);
     })
 });
